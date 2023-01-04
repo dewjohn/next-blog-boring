@@ -1,0 +1,30 @@
+.main {
+  position: relative;
+  padding: 0 0 4rem;
+  .posts {
+    .post {
+      position: relative;
+      padding: 0.5rem 2.5rem;
+      border-radius: 1rem;
+      .date {
+        opacity: 0.65;
+      }
+      .read {
+        & a {
+          color: #2563eb;
+          text-decoration: none;
+        }
+      }
+      &:hover {
+        background: #f3f3f3d1;
+      }
+    }
+  }
+  .readMore {
+    padding: 1rem 0 0 2.5rem;
+    text-decoration: underline;
+    & a {
+      color: #000;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.footer {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.75rem;
+  padding: 0 1.5rem;
+  color: #333;
+  line-height: 1.25rem;
+  & span {
+    & a {
+      color: #0070f3;
+    }
+  }
+}

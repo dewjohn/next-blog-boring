@@ -1,0 +1,21 @@
+.header {
+  position: relative;
+  margin: 6rem auto;
+  .nav {
+    display: flex;
+    justify-content: center;
+    .left {
+      width: 128px;
+      height: 128px;
+      border-radius: 100%;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+        transition: 0.6s;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}

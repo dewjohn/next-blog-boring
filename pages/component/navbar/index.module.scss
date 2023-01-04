@@ -1,0 +1,38 @@
+.navbar {
+  height: 48px;
+  padding: 0.5rem 0;
+  position: sticky;
+  .navi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    .left {
+      color: #333;
+      text-transform: none;
+      background-image: linear-gradient(
+        45deg,
+        rgb(51, 51, 51) -20%,
+        rgb(0, 112, 243) 70%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .center {
+      text-align: center;
+      margin: 0;
+      flex: 1;
+      & ul li {
+        display: inline;
+        margin: 0 0.5rem;
+        // &:not(:last-child) {
+        //   margin: 0 0.5rem;
+        // }
+      }
+    }
+    .right {
+      cursor: pointer;
+    }
+  }
+}
