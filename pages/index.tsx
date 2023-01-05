@@ -4,6 +4,7 @@ import Main from './component/main';
 import style from './../styles/index.module.scss';
 import Navbar from './component/navbar';
 import { useEventListener } from 'ahooks';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function Home() {
   let emojis = ['😜', '🤤', '🤪', '😳', '😍', '❤️', '🤭'];
@@ -34,10 +35,34 @@ export default function Home() {
       emoji.remove();
     }, 1000);
   });
+  let localDarkState = null;
+  if (typeof window !== 'undefined') {
+    localDarkState = localStorage.getItem('mode');
+  }
+  const [isDark, setIsDark] = useState<boolean>(
+    localDarkState === 'dark' ? true : false
+  );
+  if (typeof window !== 'undefined') {
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (event) => {
+        const newColorScheme = event.matches ? true : false;
+        if (newColorScheme) setIsDark(true);
+        else setIsDark(false);
+      });
+  }
+
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [isDark]);
   return (
     <div id='root'>
       <div className={style.App}>
-        <Navbar />
+        <Navbar setIsDark={setIsDark} isDark={isDark} />
         <Header />
         <Main />
         <Footer />

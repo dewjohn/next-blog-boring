@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import style from './index.module.scss';
-import Image from 'next/image';
-import moon from './../../../public/moon.svg';
-import sun from './../../../public/sun.svg';
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
+interface Iprops {
+  isDark: boolean;
+  setIsDark: (prop: boolean) => void;
+}
 
-type mode = 'sun' | 'moon';
-
-export default function Navbar() {
-  const [mode, setMode] = useState<mode>('sun');
+export default function Navbar(props: Iprops) {
   const toggle = () => {
-    if (mode === 'sun') setMode('moon');
-    if (mode === 'moon') setMode('sun');
+    const state = props.isDark;
+    props.setIsDark(!state);
+    if (typeof window !== 'undefined' && !state) {
+      localStorage.setItem('mode', 'dark');
+    } else {
+      localStorage.setItem('mode', 'light');
+    }
   };
   return (
     <div className={style.navbar}>
@@ -27,12 +31,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div className={style.right} onClick={toggle}>
-          <Image
-            src={mode === 'sun' ? sun : moon}
-            alt='mode'
-            width={20}
-            height={20}
-          ></Image>
+          {props.isDark ? <BsFillMoonFill /> : <BsFillSunFill />}
         </div>
       </nav>
     </div>

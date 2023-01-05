@@ -8,7 +8,7 @@ export default function Header() {
     <div className={style.header}>
       <div className={style.nav}>
         <div className={style.left}>
-          <Image src={avatar} alt='avatar' width={128} height={128} />
+          <Image src={avatar} alt='avatar' width={128} height={128} priority/>
         </div>
       </div>
     </div>
