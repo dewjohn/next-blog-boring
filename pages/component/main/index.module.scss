@@ -4,8 +4,8 @@
   .posts {
     .post {
       position: relative;
-      padding: 0.5rem 2.5rem;
-      border-radius: 1rem;
+      padding: 1rem 2.5rem;
+      border-radius: 1.5rem;
       .date {
         opacity: 0.65;
       }
@@ -16,7 +16,8 @@
         }
       }
       &:hover {
-        background: #f3f3f3d1;
+        background: #fafafa8c;
+        border: 1px solid #fafafa;
       }
     }
   }

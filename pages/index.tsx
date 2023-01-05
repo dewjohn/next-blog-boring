@@ -7,15 +7,15 @@ import { useEventListener } from 'ahooks';
 
 export default function Home() {
   let emojis = ['😜', '🤤', '🤪', '😳', '😍', '❤️', '🤭'];
-  useEventListener('mousemove', (e) => {
+  useEventListener('click', (e) => {
     let root = document.querySelector('#root');
     let emoji = document.createElement('span');
     emoji.setAttribute('class', 'emoji');
     let x = e.offsetX;
     let y = e.offsetY;
 
-    emoji.style.left = `${x}px`;
-    emoji.style.top = `${y}px`;
+    emoji.style.left = x + 'px';
+    emoji.style.top = y + 'px';
 
     let icons = emojis[Math.floor(Math.random() * emojis.length)];
     emoji.innerText = icons;

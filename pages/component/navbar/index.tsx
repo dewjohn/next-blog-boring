@@ -14,7 +14,7 @@ export default function Navbar() {
   };
   return (
     <div className={style.navbar}>
-      <div className={style.navi}>
+      <nav className={style.navi}>
         <div className={style.left}>
           <h1>John</h1>
         </div>
@@ -34,7 +34,7 @@ export default function Navbar() {
             height={20}
           ></Image>
         </div>
-      </div>
+      </nav>
     </div>
   );
 }
