@@ -21,17 +21,20 @@ li {
   color-scheme: light;
   --color-background: #fff;
   --color--t: #37475b;
+  --color-bg-hover: #edf1fa;
+  --color-font-hover: #626b84;
   --image-grayscale: 0;
   --image-opacity: 100%;
 }
 .dark {
   color-scheme: dark;
-  --color-background: #161615;
+  --color-background: #16181d;
+  --color-bg-hover: #1d2433;
+  --color-font-hover: #626b84;
   --color--t: #ffffffdb;
   --image-grayscale: 50%;
   --image-opacity: 90%;
 }
-
 img,
 video {
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));

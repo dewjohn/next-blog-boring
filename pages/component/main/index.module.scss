@@ -15,10 +15,15 @@
           text-decoration: none;
         }
       }
-      // &:hover {
-      //   background: #fafafa8c;
-      //   border: 1px solid #fafafa;
-      // }
+      &:hover {
+        background: var(--color-bg-hover);
+        .title {
+          color: #0e52f1;
+        }
+        .read a{
+          color: var(--color-font-hover);
+        }
+      }
     }
   }
   .readMore {

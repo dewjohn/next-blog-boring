@@ -39,6 +39,7 @@ export default function Home() {
   if (typeof window !== 'undefined') {
     localDarkState = localStorage.getItem('mode');
   }
+
   const [isDark, setIsDark] = useState<boolean>(
     localDarkState === 'dark' ? true : false
   );
@@ -54,11 +55,13 @@ export default function Home() {
 
   useEffect(() => {
     if (isDark) {
+      document.body.classList.remove('light');
       document.body.classList.add('dark');
     } else {
       document.body.classList.remove('dark');
     }
   }, [isDark]);
+
   return (
     <div id='root'>
       <div className={style.App}>
