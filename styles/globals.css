@@ -1,3 +1,21 @@
+body[data-theme='light'] {
+  color-scheme: light;
+  --color-background: #fff;
+  --color--t: #37475b;
+  --color-bg-hover: #edf1fa;
+  --color-font-hover: #626b84;
+  --image-grayscale: 0;
+  --image-opacity: 100%;
+}
+body[data-theme='dark'] {
+  color-scheme: dark;
+  --color-background: #16181d;
+  --color-bg-hover: #1d2433;
+  --color-font-hover: #626b84;
+  --color--t: #ffffffdb;
+  --image-grayscale: 50%;
+  --image-opacity: 90%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -16,26 +34,33 @@ li {
   list-style: none;
   display: inline;
 }
-
-#root {
-  color-scheme: light;
-  --color-background: #fff;
-  --color--t: #37475b;
-  --color-bg-hover: #edf1fa;
-  --color-font-hover: #626b84;
-  --image-grayscale: 0;
-  --image-opacity: 100%;
-}
-.dark {
-  color-scheme: dark;
-  --color-background: #16181d;
-  --color-bg-hover: #1d2433;
-  --color-font-hover: #626b84;
-  --color--t: #ffffffdb;
-  --image-grayscale: 50%;
-  --image-opacity: 90%;
-}
 img,
 video {
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
+}
+.emoji {
+  position: absolute;
+  pointer-events: none;
+  animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    translate: 0 100px;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    translate: 0 80px;
+    opacity: 0;
+  }
 }

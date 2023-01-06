@@ -1,21 +1,12 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 import style from './index.module.scss';
-import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
-interface Iprops {
-  isDark: boolean;
-  setIsDark: (prop: boolean) => void;
-}
 
-export default function Navbar(props: Iprops) {
-  const toggle = () => {
-    const state = props.isDark;
-    props.setIsDark(!state);
-    if (typeof window !== 'undefined' && !state) {
-      localStorage.setItem('mode', 'dark');
-    } else {
-      localStorage.setItem('mode', 'light');
-    }
-  };
+const Mode = dynamic(() => import('./component/mode'), {
+  ssr: false,
+});
+
+export default function Navbar() {
   return (
     <div className={style.navbar}>
       <nav className={style.navi}>
@@ -30,8 +21,8 @@ export default function Navbar(props: Iprops) {
             <li>Search</li>
           </ul>
         </div>
-        <div className={style.right} onClick={toggle}>
-          {props.isDark ? <BsFillMoonFill /> : <BsFillSunFill />}
+        <div className={style.right}>
+          <Mode />
         </div>
       </nav>
     </div>

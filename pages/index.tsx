@@ -2,12 +2,11 @@ import Footer from './component/footer';
 import Header from './component/header';
 import Main from './component/main';
 import style from './../styles/index.module.scss';
-import Navbar from './component/navbar';
 import { useEventListener } from 'ahooks';
-import { useCallback, useEffect, useState } from 'react';
+import Navbar from './component/navbar';
 
 export default function Home() {
-  let emojis = ['😜', '🤤', '🤪', '😳', '😍', '❤️', '🤭'];
+  let emojis = ['😜', '🤤', '🤪', '😳', '😍', '❤️', '🤭', '🥰', '😵‍💫', '😇', '😓', '🤣'];
   useEventListener('click', (e) => {
     let root = document.querySelector('#root');
     let emoji = document.createElement('span');
@@ -17,7 +16,6 @@ export default function Home() {
 
     emoji.style.left = x + 'px';
     emoji.style.top = y + 'px';
-
     let icons = emojis[Math.floor(Math.random() * emojis.length)];
     emoji.innerText = icons;
 
@@ -35,37 +33,10 @@ export default function Home() {
       emoji.remove();
     }, 1000);
   });
-  let localDarkState = null;
-  if (typeof window !== 'undefined') {
-    localDarkState = localStorage.getItem('mode');
-  }
-
-  const [isDark, setIsDark] = useState<boolean>(
-    localDarkState === 'dark' ? true : false
-  );
-  if (typeof window !== 'undefined') {
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', (event) => {
-        const newColorScheme = event.matches ? true : false;
-        if (newColorScheme) setIsDark(true);
-        else setIsDark(false);
-      });
-  }
-
-  useEffect(() => {
-    if (isDark) {
-      document.body.classList.remove('light');
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-  }, [isDark]);
-
   return (
     <div id='root'>
       <div className={style.App}>
-        <Navbar setIsDark={setIsDark} isDark={isDark} />
+        <Navbar />
         <Header />
         <Main />
         <Footer />
