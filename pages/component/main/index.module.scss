@@ -1,6 +1,6 @@
 .main {
   position: relative;
-  padding: 0 0 4rem;
+  padding: 0 0 12rem;
   .posts {
     .post {
       position: relative;
@@ -9,18 +9,16 @@
       .date {
         opacity: 0.65;
       }
-      .read {
-        & a {
-          color: #2563eb;
-          text-decoration: none;
-        }
+      .read a {
+        color: #2563eb;
+        text-decoration: none;
       }
       &:hover {
         background: var(--color-bg-hover);
         .title {
-          color: var(--color--t);
+          color: #2563eb;
         }
-        .read a{
+        .read a {
           color: var(--color-font-hover);
         }
       }

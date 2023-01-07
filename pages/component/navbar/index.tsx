@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import React from 'react';
 import style from './index.module.scss';
 
@@ -11,14 +12,21 @@ export default function Navbar() {
     <div className={style.navbar}>
       <nav className={style.navi}>
         <div className={style.left}>
-          <h1>John</h1>
+          <Link href='/'>
+            <h1>John</h1>
+          </Link>
         </div>
         <div className={style.center}>
           <ul className={style.nav_item}>
-            <li>About</li>
-            <li>Tags</li>
-            <li>Archives</li>
-            <li>Search</li>
+            <li>
+              <Link href='/about'>About</Link>
+            </li>
+            <li>
+              <Link href='/tags'>Tags</Link>
+            </li>
+            <li>
+              <Link href='/archives'>Archives</Link>
+            </li>
           </ul>
         </div>
         <div className={style.right}>
