@@ -4,3 +4,8 @@
   margin: 0 auto;
   min-height: 100vh;
 }
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 0 2rem;
+  }
+}

@@ -3,13 +3,12 @@ import style from '@/styles/main.module.scss';
 import type { Ipost } from '@/types/post';
 import Header from './component/header';
 import { getDateString } from '@/utils/time';
+import Link from 'next/link';
 
 export default function Home({ posts }: Ipost) {
-  console.log(posts);
   return (
     <>
       <Header />
-
       <section className={style.main}>
         <div className={style.posts}>
           {posts.map((post) => {
@@ -25,7 +24,7 @@ export default function Home({ posts }: Ipost) {
                   <p>{getDateString(post.created_time)}</p>
                 </div>
                 <div className={style.read}>
-                  <a href=''>Read post →</a>
+                  <Link href={`/posts/${post.id}`}>Read post →</Link>
                 </div>
               </div>
             );

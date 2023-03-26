@@ -1,4 +1,5 @@
 import { Client } from '@notionhq/client';
+import { formatPage } from './format/formatPage';
 
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
@@ -15,7 +16,9 @@ export const getDatabase = async () => {
     if (!('properties' in item)) return {};
     const title = item.properties.Name;
     const created_time = item.created_time;
+    const id = item.id;
     return {
+      id,
       title,
       created_time,
     };
@@ -24,7 +27,7 @@ export const getDatabase = async () => {
 
 export const getPage = async (pageId: string) => {
   const response = await notion.pages.retrieve({ page_id: pageId });
-  return response;
+  return formatPage(response);
 };
 
 export const getBlocks = async (blockId: string) => {

@@ -1,0 +1,21 @@
+.tag {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 0px;
+  height: 20px;
+  border-radius: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 14px;
+  line-height: 120%;
+  color: rgb(68, 42, 30);
+  margin: 0px 6px 6px 0px;
+  &__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+  }
+}
