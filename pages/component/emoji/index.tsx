@@ -1,21 +1,22 @@
 import { useEventListener } from 'ahooks';
 import React, { Fragment } from 'react';
 
+let emojis = [
+  '😜',
+  '🤤',
+  '🤪',
+  '😳',
+  '😍',
+  '❤️',
+  '🤭',
+  '🥰',
+  '😵‍💫',
+  '😇',
+  '😓',
+  '🤣',
+];
+
 export default function Emoji() {
-  let emojis = [
-    '😜',
-    '🤤',
-    '🤪',
-    '😳',
-    '😍',
-    '❤️',
-    '🤭',
-    '🥰',
-    '😵‍💫',
-    '😇',
-    '😓',
-    '🤣',
-  ];
   useEventListener('click', (e) => {
     let root = document.querySelector('#root');
     let emoji = document.createElement('span');

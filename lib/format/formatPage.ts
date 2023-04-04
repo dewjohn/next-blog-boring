@@ -26,9 +26,9 @@ export const formatPage = (response: any): IPage => {
   } = response;
   const name = formatName(Name);
   const tags = formatTags(Tags);
+  console.log('tags', tags)
   const ctime = dayjs(created_time).format(customFotmat);
   const etime = dayjs(last_edited_time).format(customFotmat);
-  console.log(ctime, etime);
   return {
     name,
     ctime,

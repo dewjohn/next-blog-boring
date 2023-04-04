@@ -1,14 +1,14 @@
 import { getDatabase } from '@/lib/notion';
 import style from '@/styles/main.module.scss';
 import type { Ipost } from '@/types/post';
-import Header from './component/header';
+import Author from './component/author';
 import { getDateString } from '@/utils/time';
 import Link from 'next/link';
 
 export default function Home({ posts }: Ipost) {
   return (
     <>
-      <Header />
+      <Author />
       <section className={style.main}>
         <div className={style.posts}>
           {posts.map((post) => {
