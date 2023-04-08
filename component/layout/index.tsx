@@ -1,5 +1,4 @@
-import React from 'react';
-import Emoji from './../emoji';
+import React, {useEffect} from 'react';
 import Footer from './../footer';
 import Navbar from './../navbar';
 import style from './index.module.scss';
@@ -15,7 +14,6 @@ export default function Layout({ children }: LayoutProps) {
         {children}
         <Footer />
       </div>
-      <Emoji />
     </div>
   );
 }

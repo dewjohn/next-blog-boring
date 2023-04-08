@@ -5,43 +5,42 @@ import avatar from '@/public/avatar.jpg';
 import Image from 'next/image';
 import style from './index.module.scss';
 import { useScroll } from 'ahooks';
+import ActiveLink from '../activeLink';
 
 const Mode = dynamic(() => import('./component/mode'), {
-  ssr: false,
+  ssr: false
 });
 
 export default function Navbar() {
   const scroll = useScroll();
+  const showAvatar = scroll && scroll?.top > 176;
   return (
     <div className={style.navbar}>
       <nav className={style.nav}>
-        {scroll && scroll?.top < 176 ? (
-          <div className={style.nav__name}>
-            <Link href='/'>
-              <h1>John</h1>
-            </Link>
-          </div>
-        ) : (
-          <Image
-            className={style.nav__mini}
-            src={avatar}
-            alt='avatar'
-            width={32}
-            height={32}
-            priority
-            style={{ borderRadius: '50%' }}
-          />
-        )}
+        <div className={style.nav__name}>
+          <Link href="/">
+            <h1 style={{ opacity: showAvatar ? 0 : 1 }}>John</h1>
+            <Image
+              className={style.nav__mini}
+              style={{ opacity: showAvatar ? 1 : 0 }}
+              src={avatar}
+              alt="avatar"
+              width={32}
+              height={32}
+              priority
+            />
+          </Link>
+        </div>
         <div className={style.nav__center}>
           <ul>
             <li>
-              <Link href='/about'>About</Link>
+              <ActiveLink href="/about">About</ActiveLink>
             </li>
             <li>
-              <Link href='/tags'>Tags</Link>
+              <ActiveLink href="/tags">Tags</ActiveLink>
             </li>
             <li>
-              <Link href='/archives'>Archives</Link>
+              <ActiveLink href="/archives">Archives</ActiveLink>
             </li>
           </ul>
         </div>

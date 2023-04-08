@@ -1,6 +1,6 @@
 .post {
   margin-top: 8rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.6rem;
   &__header {
     padding-left: calc(min(16px, 8vw));
     padding-right: calc(min(16px, 8vw));
@@ -29,7 +29,7 @@
     gap: 2rem;
   }
 
-  &__time span {
+  &__time div {
     display: flex;
     align-items: center;
     padding-top: 3px;
@@ -46,8 +46,4 @@
   &__content {
     margin-top: 2rem;
   }
-}
-
-.notion-page {
-  padding: 0!important;
 }

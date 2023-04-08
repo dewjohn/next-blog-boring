@@ -4,7 +4,7 @@ interface Post {
   title: any;
 }
 
-export interface Ipost {
+interface Ipost {
   posts: Post[];
 }
 

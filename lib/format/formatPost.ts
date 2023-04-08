@@ -1,7 +1,6 @@
-import {IPostDetail} from '@/types/post';
 import dayjs from 'dayjs';
 
-const customFotmat = 'YYYY MMMM DD HH:mm:ss';
+const customFotmat = 'dddd MMMM YYYY HH:mm:ss';
 
 const formatName = (Name: any) => {
   const {title} = Name;

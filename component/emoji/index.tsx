@@ -17,7 +17,7 @@ let emojis = [
 ];
 
 export default function Emoji() {
-  useEventListener('click', (e) => {
+  const useEmoji = useEventListener('click', (e) => {
     let root = document.querySelector('#root');
     let emoji = document.createElement('span');
     emoji.setAttribute('class', 'emoji');
@@ -43,5 +43,5 @@ export default function Emoji() {
       emoji.remove();
     }, 1000);
   });
-  return <Fragment />;
+  return useEmoji
 }
