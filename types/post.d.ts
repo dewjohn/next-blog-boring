@@ -8,7 +8,7 @@ export interface Ipost {
   posts: Post[];
 }
 
-interface IPage {
+interface IPostDetail {
   ctime: dayjs.Dayjs;
   etime: dayjs.Dayjs;
   name: string;

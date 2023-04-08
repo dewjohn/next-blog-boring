@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React from 'react';
-import avatar from './../../../public/avatar.jpg';
+import avatar from '@/public/avatar.jpg';
 import Image from 'next/image';
 import style from './index.module.scss';
 import { useScroll } from 'ahooks';

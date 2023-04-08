@@ -1,7 +1,7 @@
 import { getDatabase } from '@/lib/notion';
 import style from '@/styles/main.module.scss';
 import type { Ipost } from '@/types/post';
-import Author from './component/author';
+import Author from '@/component/author';
 import { getDateString } from '@/utils/time';
 import Link from 'next/link';
 

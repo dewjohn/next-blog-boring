@@ -1,7 +1,7 @@
 import React from 'react';
-import Emoji from '../emoji';
-import Footer from '../footer';
-import Navbar from '../navbar';
+import Emoji from './../emoji';
+import Footer from './../footer';
+import Navbar from './../navbar';
 import style from './index.module.scss';
 
 interface LayoutProps {

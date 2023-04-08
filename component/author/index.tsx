@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './index.module.scss';
-import avatar from './../../../public/avatar.jpg';
+import avatar from '@/public/avatar.jpg';
 import Image from 'next/image';
 
 export default function Author() {
