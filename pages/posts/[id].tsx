@@ -55,7 +55,7 @@ export const getStaticPaths = async () => {
   const database = await getDatabase();
   return {
     paths: database.map((page) => ({ params: { id: page.id } })),
-    fallback: true
+    fallback: false
   };
 };
 

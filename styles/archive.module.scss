@@ -22,19 +22,25 @@
     }
   }
   &__post {
-    display: flex;
-    justify-content: space-between;
     padding-top: 0.5rem;
     padding-bottom: 0.25rem;
     color: #434648;
+    overflow: hidden;
   }
   &__title {
-    width: 60%;
+    float: left;
+    width: 50%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     & a {
       color: #434648;
     }
+  }
+  &__time {
+    float: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

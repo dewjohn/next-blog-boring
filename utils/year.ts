@@ -12,7 +12,7 @@ import svg10 from '@/public/year/10.svg';
 import svg11 from '@/public/year/11.svg';
 
 interface Iicon {
-  [index: number]: SVGAElement;
+  [index: number]: any;
 }
 
 const icon: Iicon = {
