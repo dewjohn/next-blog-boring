@@ -19,3 +19,7 @@ interface ITag {
   name: string;
   color: string;
 }
+
+interface formatePost {
+  [index: string]: Post[];
+}

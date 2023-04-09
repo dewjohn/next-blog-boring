@@ -1,0 +1,40 @@
+.archive {
+  padding: 3.6rem 0;
+  position: relative;
+  &__header {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  &__item {
+    padding-top: 2rem;
+  }
+  &__year {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #ececec;
+    & img {
+      width: 1.75rem;
+      height: 1.75rem;
+      fill: currentColor;
+      display: inline-block;
+    }
+  }
+  &__post {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.25rem;
+    color: #434648;
+  }
+  &__title {
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    & a {
+      color: #434648;
+    }
+  }
+}

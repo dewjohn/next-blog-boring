@@ -38,3 +38,7 @@ export const getPostContent = async (pageId: string) => {
   const recordMap: ExtendedRecordMap = await notion.getPage(pageId);
   return recordMap;
 };
+
+export const testnotipn = async () => {
+  return await notion.getPage(process.env.NOTION_DATABASE_ID!);
+};

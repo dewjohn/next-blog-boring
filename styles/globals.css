@@ -15,8 +15,8 @@ body[data-theme='dark'] {
   --color-bg-hover: #1d2433;
   --color-font-hover: #626b84;
   --color-font: #ffffffdb;
-  --color-font-nav-Active: #EDEDEC;
-  --color-font-nav: #A1A09A;
+  --color-font-nav-Active: #ededec;
+  --color-font-nav: #a1a09a;
   --image-grayscale: 50%;
   --image-opacity: 90%;
 }
@@ -37,6 +37,27 @@ li {
   list-style: none;
   display: inline;
 }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
 }
