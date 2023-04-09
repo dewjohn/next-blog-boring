@@ -12,6 +12,7 @@ export default function ActiveLink({
   const router = useRouter();
   const style = {
     background: router.asPath === href ? '#1c1c0213' : '#ffffff00',
+    fontWeight: router.asPath === href ? '600' : '400',
     padding: '0.5rem 1rem',
     borderRadius: '9999px',
     color: '#1b1b18'
