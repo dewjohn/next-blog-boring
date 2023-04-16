@@ -31,21 +31,19 @@ export default function Home({ posts }: Ipost) {
         </div>
 
         <div className={style.readMore}>
-          <a href=''>See all →</a>
+          <Link href="/archives">See all →</Link>
         </div>
       </section>
     </>
   );
 }
+
 export const getStaticProps = async () => {
-  const database = await getDatabase();
+  const database = await getDatabase(6);
   return {
     props: {
-      posts: database,
+      posts: database
     },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every second
-    revalidate: 1, // In seconds
+    revalidate: 1
   };
 };

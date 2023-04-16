@@ -30,6 +30,7 @@ body {
   background: var(--color-background);
   color: var(--color-font);
 }
+
 ul,
 li {
   margin: 0;

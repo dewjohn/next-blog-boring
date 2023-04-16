@@ -12,9 +12,10 @@ const notionClient = new Client({
   auth: NOTION_TOKEN
 });
 
-export const getDatabase = async () => {
+export const getDatabase = async (page_size: number = 100) => {
   const queryResponse = await notionClient.databases.query({
-    database_id: NOTION_DATABASE_ID!
+    database_id: NOTION_DATABASE_ID!,
+    page_size
   });
   return queryResponse.results.map((item) => {
     if (!('properties' in item)) return {};
@@ -37,8 +38,4 @@ export const getPost = async (pageId: string) => {
 export const getPostContent = async (pageId: string) => {
   const recordMap: ExtendedRecordMap = await notion.getPage(pageId);
   return recordMap;
-};
-
-export const testnotipn = async () => {
-  return await notion.getPage(process.env.NOTION_DATABASE_ID!);
 };

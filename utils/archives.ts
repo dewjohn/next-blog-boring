@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-const customFotmat = 'dddd MMMM YYYY';
+const customFotmat = 'YYYY-MM-DD';
 
 export const formateArchives = (posts: any) => {
   const formatPosts: formatePost = {};

@@ -41,3 +41,6 @@ next-env.d.ts
 
 # http
 /res http
+
+# idea
+/.idea

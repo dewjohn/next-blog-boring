@@ -37,9 +37,6 @@ export default function Navbar() {
               <ActiveLink href="/about">About</ActiveLink>
             </li>
             <li>
-              <ActiveLink href="/tags">Tags</ActiveLink>
-            </li>
-            <li>
               <ActiveLink href="/archives">Archives</ActiveLink>
             </li>
           </ul>

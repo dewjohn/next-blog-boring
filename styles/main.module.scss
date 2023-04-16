@@ -19,7 +19,8 @@
           color: #2563eb;
         }
         .read a {
-          color: var(--color-font-hover);
+          text-decoration: underline;
+          color: #000;
         }
       }
     }
