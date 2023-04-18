@@ -2,9 +2,12 @@
   position: relative;
   min-height: 100vh;
 }
-.main {
+.layout {
   max-width: 666px;
   margin: 0 auto;
+}
+.section {
+  padding-bottom: 4rem;
 }
 
 @media screen and (max-width: 768px) {

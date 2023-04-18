@@ -11,8 +11,8 @@ export default function Layout({ children }: LayoutProps) {
     <div id="root">
       <div className={style.App}>
         <Navbar />
-        <main className={style.main}>
-          {children}
+        <main className={style.layout}>
+          <section className={style.section}>{children}</section>
           <Footer />
         </main>
       </div>
