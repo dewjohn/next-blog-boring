@@ -6,6 +6,7 @@
   backdrop-filter: blur(12px);
   z-index: 1;
   &__nav {
+    position: relative;
     max-width: 666px;
     margin: 0 auto;
     display: flex;
@@ -31,14 +32,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  &__center {
-    & ul li {
-      display: inline;
-      margin: 0 0.5rem;
-      line-height: 1.25rem;
-      font-size: 0.875rem;
-    }
   }
   &__right {
     display: flex;

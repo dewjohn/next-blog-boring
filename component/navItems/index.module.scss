@@ -1,0 +1,13 @@
+.lists {
+  & ul li {
+    display: inline;
+    margin: 0 0.5rem;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+  }
+  &__trigger {
+    position: absolute;
+    top: 0.9rem;
+    right: 2rem;
+  }
+}

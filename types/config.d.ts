@@ -3,7 +3,7 @@ interface IContact {
   url: string;
 }
 
-interface INavBar {
+interface INavList {
   title: string;
   url: string;
 }
@@ -12,5 +12,5 @@ interface IConfig {
   name: string;
   avatar: StaticImageData | string;
   contact: IContact[];
-  navBar: INavBar[];
+  navList: INavList[];
 }

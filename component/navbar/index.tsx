@@ -5,7 +5,7 @@ import avatar from '@/public/avatar.jpg';
 import Image from 'next/image';
 import style from './index.module.scss';
 import { useScroll } from 'ahooks';
-import ActiveLink from '../activeLink';
+import NavItems from '../navItems';
 
 const Mode = dynamic(() => import('./component/mode'), {
   ssr: false
@@ -32,14 +32,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className={style.navbar__center}>
-          <ul>
-            <li>
-              <ActiveLink href="/about">About</ActiveLink>
-            </li>
-            <li>
-              <ActiveLink href="/archives">Archives</ActiveLink>
-            </li>
-          </ul>
+          <NavItems />
         </div>
         <div className={style.navbar__right}>
           <Mode />

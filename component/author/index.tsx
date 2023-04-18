@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './index.module.scss';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { config } from '@/config';
 import { IconType } from 'react-icons';

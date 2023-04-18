@@ -1,4 +1,4 @@
-import { AiFillGithub, AiFillMail } from 'react-icons/all';
+import { AiFillGithub, AiFillMail } from 'react-icons/ai';
 import avatarJpg from '@/public/avatar.jpg';
 
 export const config: IConfig = {
@@ -14,10 +14,14 @@ export const config: IConfig = {
       url: 'mailto:deweizhong@outlook.com'
     }
   ],
-  navBar: [
+  navList: [
     {
       title: 'About',
       url: '/about'
     },
+    {
+      title: 'Archives',
+      url: '/archives'
+    }
   ]
 };

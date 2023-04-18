@@ -15,7 +15,7 @@ export default function ActiveLink({
     fontWeight: router.asPath === href ? '600' : '400',
     padding: '0.5rem 1rem',
     borderRadius: '9999px',
-    color: router.asPath === href ? '#2563ebde' : '#1b1b18'
+    color: router.asPath === href ? '#233c72de' : '#1b1b18'
   };
   return (
     <Link href={href} style={style}>
