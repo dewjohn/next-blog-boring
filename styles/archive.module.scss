@@ -28,8 +28,8 @@
   &__post {
     padding-top: 0.5rem;
     padding-bottom: 0.25rem;
-    color: #434648;
     overflow: hidden;
+    color: var(--color-ar-post-name);
   }
   &__title {
     float: left;
@@ -38,7 +38,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     & a {
-      color: #434648;
+      color: var(--color-ar-post-name);
     }
   }
   &__time {

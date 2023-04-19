@@ -18,7 +18,7 @@ export default function Archives({ posts }: { posts: formatePost }) {
           <div className={style.archive__item} key={item}>
             <div className={style.archive__year}>
               <h2>{item.slice(0, 4)}</h2>
-              <Image src={translateYear(item.slice(0, 4))} alt="test" />
+              <Image src={translateYear(item.slice(0, 4))} alt="zodiac" />
             </div>
             {posts[item].map((post) => (
               <div className={style.archive__post} key={post.id}>

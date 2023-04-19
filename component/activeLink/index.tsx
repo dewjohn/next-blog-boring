@@ -14,12 +14,11 @@ export default function ActiveLink({
     background: router.asPath === href ? '#1c1c0213' : '#ffffff00',
     fontWeight: router.asPath === href ? '600' : '400',
     padding: '0.5rem 1rem',
-    borderRadius: '9999px',
-    color: router.asPath === href ? '#233c72de' : '#1b1b18'
+    borderRadius: '9999px'
   };
   return (
     <Link href={href} style={style}>
-      <span>{children}</span>
+      {children}
     </Link>
   );
 }

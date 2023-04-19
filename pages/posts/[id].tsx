@@ -1,7 +1,7 @@
 import style from '@/styles/post.module.scss';
 import { getDatabase, getPost, getPostContent } from '@/lib/notion';
 import { NotionRenderer } from 'react-notion-x';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Tag from '@/component/tag';
 import { FcCalendar } from 'react-icons/fc';
 import type { ExtendedRecordMap } from 'notion-types';
@@ -45,7 +45,11 @@ const Posts = ({
         </div>
       </div>
       <div className={style.post__content}>
-        <NotionRenderer recordMap={recordMap} components={{ Code }} />
+        <NotionRenderer
+          recordMap={recordMap}
+          components={{ Code }}
+          darkMode={false}
+        />
       </div>
     </div>
   );
