@@ -32,15 +32,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# mdx
-*.mdx
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
 # idea
 /.idea
-
-# config
-/config
