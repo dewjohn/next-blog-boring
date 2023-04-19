@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# next-blog-boring
 
-First, run the development server:
+A brief blog based on notion
 
-```bash
-npm run dev
-# or
-yarn dev
+
+## idea
+
+I learn how to use notion api and nextjs to build a blog from [notion-blog-nextjs](https://github.com/samuelkraft/notion-blog-nextjs)
+
+## demo
+
+[https://next-blog-boring.vercel.app/](https://next-blog-boring.vercel.app/)
+
+## how to use
+
+1. [Fork](https://github.com/dewjohn/next-blog-boring/fork) the project to your repositories
+
+2. add your personal infomation
+- mkdir `config/index.ts` in project folder
+- modify personal information in the following format
+
 ```
+import { AiFillGithub, AiFillMail } from 'react-icons/ai';
+import avatarJpg from '@/public/avatar.jpg';
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+export const config: IConfig = {
+  name: 'john',
+  avatar: avatarJpg,
+  contact: [
+    {
+      icon: AiFillGithub,
+      url: 'https://www.github.com/dewjohn'
+    },
+    {
+      icon: AiFillMail,
+      url: 'mailto:deweizhong@outlook.com'
+    }
+  ],
+  navList: [
+    {
+      title: 'About',
+      url: '/about'
+    },
+    {
+      title: 'Archives',
+      url: '/archives'
+    }
+  ]
+};
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+- attention one
+the project use [react icons](https://react-icons.github.io/), so remember to import icon in `config/index.ts`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- attention two
+if you want to make you DIY pages, like about page, first you need to add about to navList and in `pages/` folder create a about.mdx.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. import to [vercel](https://vercel.com/new)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- add Environment Variables
 
-## Learn More
+    ```NOTION_DATABASE_ID```
 
-To learn more about Next.js, take a look at the following resources:
+    ```NOTION_DATABASE_ID```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[MIT](https://github.com/dewjohn/next-blog-boring/blob/main/LICENSE)
