@@ -34,17 +34,46 @@
     transform: translate(-50%, -50%);
   }
   &__right {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+    position: relative;
+  }
+  &__menu {
+    padding-right: 0.5rem;
+  }
+  &__mode {
     width: 16px;
     height: 16px;
-    transition: transform 0.7s ease-in;
-    transform-origin: center;
   }
 }
-@media screen and (max-width: 567px) {
-  .navbar .navi {
-    justify-content: center;
+
+.layer {
+  position: absolute;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  font-size: 4vh;
+  line-height: 8vh;
+  background: #fff;
+  animation: 0.2s ease-in forwards fadein;
+  z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.8;
   }
 }

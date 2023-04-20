@@ -23,8 +23,8 @@ export default function Mode() {
     }
   }, [activeTheme]);
   return (
-    <div onClick={() => setActiveTheme(inactiveTheme)}>
+    <span onClick={() => setActiveTheme(inactiveTheme)}>
       {activeTheme === 'dark' ? <BsFillMoonFill /> : <BsFillSunFill />}
-    </div>
+    </span>
   );
 }

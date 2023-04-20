@@ -16,12 +16,20 @@ export const config: IConfig = {
   ],
   navList: [
     {
+      title: 'Archives',
+      url: '/archives'
+    },
+    {
+      title: 'Test',
+      url: '/test'
+    },
+    {
       title: 'About',
       url: '/about'
     },
     {
-      title: 'Archives',
-      url: '/archives'
+      title: 'Toggle',
+      url: '/toogle'
     }
   ]
 };
