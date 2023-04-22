@@ -83,7 +83,7 @@ export const config: IConfig = {
   ```
 ### 3. 找到 notion key
 
-1. 创建 `notion` 数据库，复刻  [notion database table](https://www.notion.so/5b53abc87b284beab0c169c9fb695b4d?v=e4ed5b1a8f2e4e12b6d1ef68fa66e518) 到你的 notion 账号中,然后在 notion 中获取 `NOTION_TOKEN` 和 `NOTION_DATABASE_ID`
+1. 创建 `notion` 数据库，复刻（右上角Duplicate）  [notion database table](https://www.notion.so/5b53abc87b284beab0c169c9fb695b4d?v=e4ed5b1a8f2e4e12b6d1ef68fa66e518) 到你的 notion 账号中,然后在 notion 中获取 `NOTION_TOKEN` 和 `NOTION_DATABASE_ID`
 
 可以查看 [getting started guide](https://developers.notion.com/docs/getting-started) 找到`NOTION_TOKEN` 和 `NOTION_DATABASE_ID`
 
