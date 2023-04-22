@@ -14,7 +14,7 @@
         text-decoration: none;
       }
       &:hover {
-        background: var(--color-bg-post-hover);
+        background: var(--color-bg-hover);
         .title {
           color: #2563eb;
         }
@@ -30,7 +30,7 @@
     float: right;
     text-decoration: underline;
     & a {
-      color: var(--color-font);
+      color: var(--color-font-1);
     }
   }
 }

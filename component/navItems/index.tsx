@@ -5,10 +5,10 @@ import style from './index.module.scss';
 
 function NavItems() {
   return (
-    <div className={style.lists}>
+    <div className={style.link}>
       <ul>
         {config.navList!.map((item, index) => (
-          <li key={item.title + index}>
+          <li key={item.title + index} className={style.link__item}>
             <ActiveLink href={item.url}>{item.title}</ActiveLink>
           </li>
         ))}

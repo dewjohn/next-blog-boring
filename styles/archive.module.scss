@@ -26,10 +26,11 @@
     }
   }
   &__post {
+    position: relative;
     padding-top: 0.5rem;
     padding-bottom: 0.25rem;
     overflow: hidden;
-    color: var(--color-ar-post-name);
+    color: var(--color-font-2);
   }
   &__title {
     float: left;
@@ -38,7 +39,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     & a {
-      color: var(--color-ar-post-name);
+      color: var(--color-font-2);
     }
   }
   &__time {

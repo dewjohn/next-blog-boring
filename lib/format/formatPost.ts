@@ -9,10 +9,9 @@ const formatName = (Name: any) => {
 
 const formatTags = (Tag: any) => {
   const { multi_select } = Tag;
-  return multi_select.map((item: { name: string; color: string }) => {
+  return multi_select.map((item: { name: string }) => {
     return {
-      name: item.name,
-      color: item.color
+      name: item.name
     };
   });
 };

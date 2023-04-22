@@ -1,9 +1,8 @@
 import style from '@/styles/post.module.scss';
 import { getDatabase, getPost, getPostContent } from '@/lib/notion';
 import { NotionRenderer } from 'react-notion-x';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import Tag from '@/component/tag';
-import { FcCalendar } from 'react-icons/fc';
 import type { ExtendedRecordMap } from 'notion-types';
 import dynamic from 'next/dynamic';
 
@@ -24,25 +23,6 @@ const Posts = ({
         <div className={style.post__title}>
           <h1>{post.name}</h1>
         </div>
-        <div className={style.post__time} title="创建时间">
-          <div data-tip="创建时间">
-            <FcCalendar />
-            {post.ctime}
-          </div>
-          <div data-tip="修改时间" title="修改时间">
-            <FcCalendar />
-            {post.etime}
-          </div>
-        </div>
-        <div className={style.post__tags}>
-          {post.tags.map(
-            (item: { name: string; color: string }, index: number) => (
-              <Fragment key={item.name + index}>
-                <Tag name={item.name} color={item.color} />
-              </Fragment>
-            )
-          )}
-        </div>
       </div>
       <div className={style.post__content}>
         <NotionRenderer
@@ -50,6 +30,19 @@ const Posts = ({
           components={{ Code }}
           darkMode={false}
         />
+      </div>
+      <div className={style.post__time} title="创建时间">
+        Last edit:{' '}
+        <span data-tip="修改时间" title="修改时间">
+          {post.etime}
+        </span>
+      </div>
+      <div className={style.post__tags}>
+        {post.tags.map((item: { name: string }, index: number) => (
+          <Fragment key={item.name + index}>
+            <Tag name={item.name} />
+          </Fragment>
+        ))}
       </div>
     </div>
   );

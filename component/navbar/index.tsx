@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { configResponsive, useResponsive } from 'ahooks';
 import avatar from '@/public/avatar.jpg';
 import Image from 'next/image';
 import style from './index.module.scss';
@@ -9,17 +10,31 @@ import NavItems from '../navItems';
 import { config } from '@/config';
 import { AiOutlineMenu } from 'react-icons/ai';
 
+configResponsive({
+  small: 576,
+  middle: 768,
+  large: 992
+});
+
 const Mode = dynamic(() => import('./component/mode'), {
   ssr: false
 });
 
 export default function Navbar() {
   const [menu, setMenu] = useState<boolean>(false);
+  const [collapsed, setCollapsed] = useState<boolean>(false);
   const scroll = useScroll();
+  const responsive = useResponsive();
   const isAvatar = useMemo(() => scroll && scroll?.top > 176, [scroll]);
-  const showMenu = useMemo(() => config.navList.length > 3, []);
-
   const toggle = () => setMenu(!menu);
+
+  useEffect(() => {
+    if (responsive && !responsive['middle']) {
+      setCollapsed(true);
+    } else {
+      setCollapsed(false);
+    }
+  }, [responsive, collapsed]);
 
   return (
     <div className={style.navbar}>
@@ -38,20 +53,20 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        {!showMenu && (
+        {!collapsed && (
           <div className={style.navbar__center}>
             <NavItems />
           </div>
         )}
         <div className={style.navbar__right}>
-          {showMenu && (
+          {collapsed && (
             <span className={style.navbar__menu} onClick={toggle}>
               <AiOutlineMenu />
             </span>
           )}
-          <span className={style.navbar__mode}>
+          <div className={style.navbar__mode}>
             <Mode />
-          </span>
+          </div>
         </div>
       </nav>
       {menu && (

@@ -1,11 +1,14 @@
-.lists {
+.link {
+  &__item {
+    padding: 0.5rem 1rem;
+  }
   & ul li {
     display: inline;
     margin: 0 0.5rem;
     line-height: 1.25rem;
     font-size: 0.875rem;
     & a {
-      color: var(--color-font);
+      color: var(--color-font-link-1);
     }
   }
   &__trigger {

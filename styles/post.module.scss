@@ -1,6 +1,7 @@
 .post {
   margin-top: 8rem;
   margin-bottom: 3.6rem;
+  overflow: hidden;
   &__header {
     padding-left: calc(min(16px, 8vw));
     padding-right: calc(min(16px, 8vw));
@@ -23,27 +24,18 @@
   }
 
   &__time {
-    position: relative;
-    margin-right: 1.5em;
-    display: flex;
-    gap: 2rem;
-  }
-
-  &__time div {
-    display: flex;
-    align-items: center;
-    padding-top: 3px;
-    line-height: 1.3;
-    color: #6b7886;
+    float: right;
+    font-size: 0.75rem;
+    color: var(--color-font-6);
   }
 
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 7px;
+    padding-top: 3.6rem;
   }
 
   &__content {
-    margin-top: 2rem;
+    margin: 2rem 0;
   }
 }

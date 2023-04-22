@@ -17,7 +17,7 @@
 ### 1. [Fork](https://github.com/dewjohn/next-blog-boring/fork) 此项目
 
 ### 2. 修改你的个人信息
-- 修改 `config/index.ts` 配置文件
+- `git clone `你 fork 之后的项目，然后修改 `config/index.ts` 配置文件
 - 按照下面的格式修改成你的个人信息
 
 ```

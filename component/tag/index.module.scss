@@ -7,9 +7,9 @@
   border-radius: 3px;
   padding-left: 6px;
   padding-right: 6px;
-  font-size: 14px;
+  font-size: 0.75rem;
   line-height: 120%;
-  color: rgb(68, 42, 30);
+  color: var(--color-font-6);
   margin: 0px 6px 6px 0px;
   &__name {
     white-space: nowrap;

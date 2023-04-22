@@ -35,13 +35,17 @@
   }
   &__right {
     position: relative;
+    color: var(--color-font-5);
+    & svg {
+      font-size: 1.25rem;
+    }
   }
   &__menu {
     padding-right: 0.5rem;
   }
   &__mode {
-    width: 16px;
-    height: 16px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
@@ -58,9 +62,26 @@
   height: 100vh;
   font-size: 4vh;
   line-height: 8vh;
-  background: #fff;
+  background: var(--color-bg-1);
   animation: 0.2s ease-in forwards fadein;
   z-index: 100;
+  &__item {
+    position: relative;
+    border-bottom: solid 2px var(--color-font-4);
+    color: var(--color-font-1);
+  }
+  &__item::before {
+    display: block;
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-font-4);
+    position: absolute;
+    top: 50%;
+    left: -1.75rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
 }
 
 @media screen and (max-width: 768px) {
