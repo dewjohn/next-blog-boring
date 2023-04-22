@@ -104,6 +104,11 @@ NOTION_DATABASE_ID=
 
 ### 6. 关于无缝更新
 
+先设置远程仓库
+```
+git remote add upstream git@github.com:dewjohn/next-blog-boring.git
+
+```
 只要执行
 
 ```
