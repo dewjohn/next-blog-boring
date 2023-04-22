@@ -17,7 +17,7 @@
 ### 1. [Fork](https://github.com/dewjohn/next-blog-boring/fork) 此项目
 
 ### 2. 修改你的个人信息
-- `git clone `你 fork 之后的项目，然后修改 `config/index.ts` 配置文件
+- `git clone`你 fork 之后的项目，然后新建配置文件 `config/index.ts`
 - 按照下面的格式修改成你的个人信息
 
 ```
@@ -39,12 +39,12 @@ export const config: IConfig = {
   ],
   navList: [
     {
-      title: 'About',
-      url: '/about'
-    },
-    {
       title: 'Archives',
       url: '/archives'
+    },
+    {
+      title: '显示的名称',  // 同时记得在 pages/ 目录下创建 链接.mdx 文件
+      url: '/链接'
     }
   ]
 };
@@ -69,7 +69,18 @@ export const config: IConfig = {
 
     3. 接下来就可以按照 `markdown` 语法书写内容了
 
+- 完整实例
 
+  可以查看当前仓库的 `example` 分支，查看如何书写`config`配置文件
+
+  [https://github.com/dewjohn/next-blog-boring/tree/example](https://github.com/dewjohn/next-blog-boring/tree/example)
+
+
+- 更新完你的个人信息后推送到你的仓库
+
+  ```
+  git push origin main
+  ```
 ### 3. 找到 notion key
 
 1. 创建 `notion` 数据库，复刻  [notion database table](https://www.notion.so/5b53abc87b284beab0c169c9fb695b4d?v=e4ed5b1a8f2e4e12b6d1ef68fa66e518) 到你的 notion 账号中,然后在 notion 中获取 `NOTION_TOKEN` 和 `NOTION_DATABASE_ID`
@@ -88,6 +99,27 @@ NOTION_DATABASE_ID=
 ### 5. 写作
 
 至此，在 `notion` 中写作，即可在博客查看，无需重新部署项目🤗
+
+
+
+### 6. 关于无缝更新
+
+只要执行
+
+```
+git pull upstream main
+```
+
+即可更新到最新分支
+
+然后再执行，推送到你的仓库
+
+```
+git push origin main
+```
+
+推送完毕，`vercel`自动重新构建，完成丝滑更新
+
 
 
 ## License
