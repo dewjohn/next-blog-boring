@@ -5,6 +5,7 @@ import React, { Fragment } from 'react';
 import Tag from '@/component/tag';
 import type { ExtendedRecordMap } from 'notion-types';
 import dynamic from 'next/dynamic';
+import useTheme from '@/hooks/useTheme';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then((m) => m.Code)
@@ -17,6 +18,8 @@ const Posts = ({
   post: IPostDetail;
   recordMap: ExtendedRecordMap;
 }) => {
+  const theme = useTheme();
+  console.log('theme', theme);
   return (
     <div className={style.post}>
       <div className={style.post__header}>
@@ -28,7 +31,7 @@ const Posts = ({
         <NotionRenderer
           recordMap={recordMap}
           components={{ Code }}
-          darkMode={false}
+          darkMode={theme === 'dark'}
         />
       </div>
       <div className={style.post__time} title="创建时间">

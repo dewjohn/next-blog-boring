@@ -98,7 +98,7 @@ NOTION_DATABASE_ID=
 
 ### 5. 写作
 
-至此，在 `notion` 中写作，即可在博客查看，无需重新部署项目🤗
+至此，在 `notion` 中写作，即可在博客看到刚在notion写的笔记，无需重新部署项目🤗
 
 
 
@@ -107,7 +107,6 @@ NOTION_DATABASE_ID=
 先设置远程仓库
 ```
 git remote add upstream git@github.com:dewjohn/next-blog-boring.git
-
 ```
 只要执行
 
@@ -125,6 +124,35 @@ git push origin main
 
 推送完毕，`vercel`自动重新构建，完成丝滑更新
 
+
+### 7. 本地开发
+
+安装 `pnpm`
+
+```
+npm install -g pnpm
+```
+
+安装项目所需依赖
+
+```
+pnpm i
+```
+
+添加本地环境变量 `NOTION_TOKEN`和`NOTION_DATABASE_ID`
+
+在项目根目录新建 `.env` 文件
+
+```
+NOTION_TOKEN = 你的NOTION_TOKEN
+NOTION_DATABASE_ID = 你的NOTION_DATABASE_ID
+```
+
+启动开发
+
+```
+pnpm dev
+```
 
 
 ## License
