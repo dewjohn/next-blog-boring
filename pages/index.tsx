@@ -3,10 +3,15 @@ import style from '@/styles/main.module.scss';
 import Author from '@/component/author';
 import { getDateString } from '@/utils/time';
 import Link from 'next/link';
+import Head from 'next/head';
+import { config } from '@/config';
 
 export default function Home({ posts }: Ipost) {
   return (
     <>
+      <Head>
+        <title>{config.name}</title>
+      </Head>
       <Author />
       <section className={style.content}>
         <div className={style.posts}>

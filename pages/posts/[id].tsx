@@ -6,6 +6,7 @@ import Tag from '@/component/tag';
 import type { ExtendedRecordMap } from 'notion-types';
 import dynamic from 'next/dynamic';
 import useTheme from '@/hooks/useTheme';
+import Head from 'next/head';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then((m) => m.Code)
@@ -19,35 +20,39 @@ const Posts = ({
   recordMap: ExtendedRecordMap;
 }) => {
   const theme = useTheme();
-  console.log('theme', theme);
   return (
-    <div className={style.post}>
-      <div className={style.post__header}>
-        <div className={style.post__title}>
-          <h1>{post.name}</h1>
+    <>
+      <Head>
+        <title>{post.name}</title>
+      </Head>
+      <div className={style.post}>
+        <div className={style.post__header}>
+          <div className={style.post__title}>
+            <h1>{post.name}</h1>
+          </div>
+        </div>
+        <div className={style.post__content}>
+          <NotionRenderer
+            recordMap={recordMap}
+            components={{ Code }}
+            darkMode={theme === 'dark'}
+          />
+        </div>
+        <div className={style.post__time} title="创建时间">
+          Last edit:{' '}
+          <span data-tip="修改时间" title="修改时间">
+            {post.etime}
+          </span>
+        </div>
+        <div className={style.post__tags}>
+          {post.tags.map((item: { name: string }, index: number) => (
+            <Fragment key={item.name + index}>
+              <Tag name={item.name} />
+            </Fragment>
+          ))}
         </div>
       </div>
-      <div className={style.post__content}>
-        <NotionRenderer
-          recordMap={recordMap}
-          components={{ Code }}
-          darkMode={theme === 'dark'}
-        />
-      </div>
-      <div className={style.post__time} title="创建时间">
-        Last edit:{' '}
-        <span data-tip="修改时间" title="修改时间">
-          {post.etime}
-        </span>
-      </div>
-      <div className={style.post__tags}>
-        {post.tags.map((item: { name: string }, index: number) => (
-          <Fragment key={item.name + index}>
-            <Tag name={item.name} />
-          </Fragment>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
