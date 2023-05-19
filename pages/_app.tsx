@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import '../styles/globals.css';
+import '@/styles/globals.css';
 import 'react-notion-x/src/styles.css';
 import Layout from '@/component/layout';
 

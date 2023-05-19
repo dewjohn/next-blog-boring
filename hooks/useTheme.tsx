@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
+const getTheme = () =>
+  window.localStorage.getItem('theme') ||
+  document.body.getAttribute('data-theme');
+
 const useTheme = () => {
-  const [theme, setTheme] = useState<any>(
-    typeof window !== 'undefined'
-      ? document.body.getAttribute('data-theme')
-      : 'dark'
-  );
+  const [theme, setTheme] = useState<any>('');
+
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setTheme(() => getTheme());
+    }
     const handleThemeChange = () => {
       const currentTheme = document.body.getAttribute('data-theme');
       setTheme(() => currentTheme);
