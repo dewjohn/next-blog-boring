@@ -4,9 +4,9 @@
 一个基于notion的小博客
 
 
-## idea
+## 关于
 
-我从 [notion-blog-nextjs](https://github.com/samuelkraft/notion-blog-nextjs) 中学 notion api 和 next.js，然后学习该项目重写项目并加上创新
+此项目灵感来自 [notion-blog-nextjs](https://github.com/samuelkraft/notion-blog-nextjs)
 
 ## demo
 
@@ -17,7 +17,7 @@
 ### 1. [Fork](https://github.com/dewjohn/next-blog-boring/fork) 此项目
 
 ### 2. 修改你的个人信息
-- `git clone`你 fork 之后的项目，然后新建配置文件 `config/index.ts`
+- `git clone`你 fork 之后的项目，然后新建`config`目录，在`config`目录下新建配置文件 `index.ts`
 - 按照下面的格式修改成你的个人信息
 
 ```
@@ -83,18 +83,26 @@ export const config: IConfig = {
   ```
 ### 3. 找到 notion key
 
-1. 创建 `notion` 数据库，复刻（右上角Duplicate）  [notion database table](https://www.notion.so/5b53abc87b284beab0c169c9fb695b4d?v=e4ed5b1a8f2e4e12b6d1ef68fa66e518) 到你的 notion 账号中,然后在 notion 中获取 `NOTION_TOKEN` 和 `NOTION_DATABASE_ID`
+创建 `notion` 数据库，复刻（右上角Duplicate）  [notion database table](https://dewjohn.notion.site/23900ff399914a75a99a896e4b7adffe?v=c7b84928c51f40ffa7abd215c68bc225) 到你的 notion 账号中，然后点击项目右上角的`share`，把`Share to web`打开
 
-可以查看 [getting started guide](https://developers.notion.com/docs/getting-started) 找到`NOTION_TOKEN` 和 `NOTION_DATABASE_ID`
+打开[https://www.notion.com/my-integrations](https://www.notion.com/my-integrations)，创建一个`integration`，创建好就能获取`NOTION_TOKEN`，如图：
+![https://files.readme.io/cbbd7c3-create_integration.gif](https://files.readme.io/cbbd7c3-create_integration.gif)
+
+而`NOTION_DATABASE_ID`就是你的项目链接上的一串字符
+![https://files.readme.io/62e5027-notion_database_id.png](https://files.readme.io/62e5027-notion_database_id.png)
+
+
+更详细教程可以查看 [getting started guide](https://developers.notion.com/docs/create-a-notion-integration) 找到`NOTION_TOKEN` 和 `NOTION_DATABASE_ID`
+
+
+### 4. 部署到 [vercel](https://vercel.com/new)
+
+点击 [vercel](https://vercel.com/new) 此链接，选择刚才 fork 到你仓库的项目，然后在 导入项目页面 `Environment Variables` 中填入刚获取的 `NOTION_TOKEN` 和 `NOTION_DATABASE_ID` 即可成功部署
 
 ```
 NOTION_TOKEN=
 NOTION_DATABASE_ID=
 ```
-
-### 4. 部署到 [vercel](https://vercel.com/new)
-
-点击 [vercel](https://vercel.com/new) 此链接，选择刚才 fork 到你仓库的项目，然后在 导入项目页面 `Environment Variables` 中填入 `NOTION_TOKEN` 和 `NOTION_DATABASE_ID` 即可成功部署
 
 ### 5. 写作
 
@@ -153,6 +161,12 @@ NOTION_DATABASE_ID = 你的NOTION_DATABASE_ID
 ```
 pnpm dev
 ```
+
+## to do
+
+- [ ] 增加SEO
+- [ ] 增加代码块highlight.js高亮
+- [ ] 等等改进
 
 
 ## License
