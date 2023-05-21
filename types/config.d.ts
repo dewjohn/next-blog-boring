@@ -13,4 +13,5 @@ interface IConfig {
   avatar: StaticImageData | string;
   contact: IContact[];
   navList: INavList[];
+  emoji: string[];
 }

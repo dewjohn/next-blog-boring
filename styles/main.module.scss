@@ -1,31 +1,37 @@
 .content {
   position: relative;
   padding: 0 0 2rem;
-  .posts {
-    .post {
-      position: relative;
-      padding: 1rem 0.5rem;
-      border-radius: 1.5rem;
-      .date {
-        opacity: 0.65;
-      }
-      .read a {
-        color: #2563eb;
-        text-decoration: none;
-      }
-      &:hover {
-        background: var(--color-bg-hover);
-        .title {
-          color: #2563eb;
-        }
-        .read a {
-          text-decoration: underline;
-          color: #000;
-        }
-      }
+  &__post:hover {
+    background: var(--color-bg-hover);
+    .content__title {
+      color: #2563eb;
+    }
+    .content__read a {
+      color: #000;
+    }
+    .content__arrow {
+      opacity: 1;
     }
   }
-  .readMore {
+  &__post {
+    position: relative;
+    padding: 1rem 0.5rem;
+    border-radius: 1.5rem;
+  }
+  &__date {
+    opacity: 0.65;
+  }
+  &__read {
+    position: relative;
+  }
+  &__arrow {
+    opacity: 0;
+  }
+  &__read a {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  &__readMore {
     padding: 1rem 0 0 2.5rem;
     float: right;
     text-decoration: underline;

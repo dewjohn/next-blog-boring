@@ -5,8 +5,10 @@ import { getDateString } from '@/utils/time';
 import Link from 'next/link';
 import Head from 'next/head';
 import { config } from '@/config';
+import useEmoji from '@/hooks/useEmoji';
 
 export default function Home({ posts }: Ipost) {
+  useEmoji();
   return (
     <>
       <Head>
@@ -14,29 +16,31 @@ export default function Home({ posts }: Ipost) {
       </Head>
       <Author />
       <section className={style.content}>
-        <div className={style.posts}>
+        <div className={style.content__posts}>
           {posts.map((post) => {
             return (
               <div
-                className={style.post}
+                className={style.content__post}
                 key={post.title.title[0].text.content}
               >
-                <div className={style.title}>
+                <div className={style.content__title}>
                   <h3>{post.title.title[0].text.content}</h3>
                 </div>
-                <div className={style.date}>
+                <div className={style.content__date}>
                   <p>{getDateString(post.created_time)}</p>
                 </div>
-                <div className={style.read}>
-                  <Link href={`/posts/${post.id}`}>Read post →</Link>
+                <div className={style.content__read}>
+                  <Link href={`/posts/${post.id}`}>
+                    Read post <span className={style.content__arrow}>→</span>
+                  </Link>
                 </div>
               </div>
             );
           })}
         </div>
 
-        <div className={style.readMore}>
-          <Link href="/archives">See all →</Link>
+        <div className={style.content__readMore}>
+          <Link href="/archives">See all</Link>
         </div>
       </section>
     </>
