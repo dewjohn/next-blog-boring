@@ -24,13 +24,14 @@ export default function Author() {
         />
       </div>
       <div className={style.author__contact}>
-        {config.contact.map((item, index) => (
-          <ContactComponent
-            key={item.url + index}
-            url={item.url}
-            icon={item.icon}
-          />
-        ))}
+        {config.contact &&
+          config.contact.map((item, index) => (
+            <ContactComponent
+              key={item.url + index}
+              url={item.url}
+              icon={item.icon}
+            />
+          ))}
       </div>
     </div>
   );

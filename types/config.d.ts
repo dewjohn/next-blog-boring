@@ -11,7 +11,7 @@ interface INavList {
 interface IConfig {
   name: string;
   avatar: StaticImageData | string;
-  contact: IContact[];
+  contact?: IContact[];
   navList: INavList[];
-  emoji: string[];
+  emoji?: string[];
 }
