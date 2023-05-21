@@ -35,6 +35,7 @@
   }
   &__right {
     position: relative;
+    display: flex;
     color: var(--color-font-5);
     & svg {
       font-size: 1rem;
