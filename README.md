@@ -3,6 +3,12 @@
 
 一个基于notion的小博客
 
+# 截图
+![https://raw.githubusercontent.com/dewjohn/next-blog-boring/main/screenshot/screenshot1.png](https://raw.githubusercontent.com/dewjohn/next-blog-boring/main/screenshot/screenshot1.png)
+
+![https://raw.githubusercontent.com/dewjohn/next-blog-boring/main/screenshot/screenshot2.png](https://raw.githubusercontent.com/dewjohn/next-blog-boring/main/screenshot/screenshot2.png)
+
+![https://raw.githubusercontent.com/dewjohn/next-blog-boring/main/screenshot/screenshot3.png](https://raw.githubusercontent.com/dewjohn/next-blog-boring/main/screenshot/screenshot3.png)
 
 ## 关于
 
