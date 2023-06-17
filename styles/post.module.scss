@@ -21,19 +21,19 @@
     height: 75%;
     top: 12%;
   }
-
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+  }
   &__time {
-    float: right;
     font-size: 0.75rem;
     color: var(--color-font-6);
   }
-
   &__tags {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 3.6rem;
+    width: 50%;
   }
-
   &__content {
     margin: 2rem 0;
   }

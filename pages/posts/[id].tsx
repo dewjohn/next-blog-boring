@@ -38,18 +38,20 @@ const Posts = ({
             darkMode={theme === 'dark'}
           />
         </div>
-        <div className={style.post__time} title="创建时间">
-          Last edit:{' '}
-          <span data-tip="修改时间" title="修改时间">
-            {post.etime}
-          </span>
-        </div>
-        <div className={style.post__tags}>
-          {post.tags.map((item: { name: string }, index: number) => (
-            <Fragment key={item.name + index}>
-              <Tag name={item.name} />
-            </Fragment>
-          ))}
+        <div className={style.post__footer}>
+          <div className={style.post__tags}>
+            {post.tags.map((item: { name: string }, index: number) => (
+              <Fragment key={item.name + index}>
+                <Tag name={item.name} />
+              </Fragment>
+            ))}
+          </div>
+          <div className={style.post__time} title="创建时间">
+            Last edit：{' '}
+            <span data-tip="修改时间" title="修改时间">
+              {post.etime}
+            </span>
+          </div>
         </div>
       </div>
     </>
